@@ -7,7 +7,7 @@ Focused on patterns, clean code, and interview-ready explanations.
 
 ## Structure
 
-Each problem lives in its own file under the matching category folder:
+Each problem is in its own file under the matching category folder:
 
 ```
 neetcode150/

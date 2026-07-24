@@ -4,7 +4,12 @@ My solutions and notes while learning SQL through [SQLBolt](https://sqlbolt.com)
 
 **Progress:** 7 / 18 lessons
 
-## Lessons
+## Structure 
+
+- All practice queries are saved in `sqlbolt-practice.sql`
+- Language: Standard SQL (works with SQLite, PostgreSQL, MySQL, etc.)
+
+## Progress Tracker
 
 ### Core Lessons
 - [x] Introduction to SQL (Jul 17, 2026)
@@ -31,7 +36,3 @@ My solutions and notes while learning SQL through [SQLBolt](https://sqlbolt.com)
 - [ ] Intermediate SQL Topics
 - [ ] Subqueries
 - [ ] Unions, Intersections & Exceptions
-
-## Notes
-- All practice queries are saved in `sqlbolt-practice.sql`
-- Language: Standard SQL (works with SQLite, PostgreSQL, MySQL, etc.)
