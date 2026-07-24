@@ -9,6 +9,7 @@ Focused on patterns, clean code, and interview-ready explanations.
 
 Each problem lives in its own file under the matching category folder:
 
+```
 neetcode150/
 ├── 01-Arrays-and-Hashing/
 ├── 02-Two-Pointers/
@@ -28,7 +29,7 @@ neetcode150/
 ├── 16-Intervals/
 ├── 17-Math-and-Geometry/
 └── 18-Bit-Manipulation/
-
+```
 
 
 ## Progress Tracker
