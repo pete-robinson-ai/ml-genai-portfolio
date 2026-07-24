@@ -1,6 +1,6 @@
 # Machine Learning Zoomcamp
 
-My notes, homework, and projects from the **Self-paced [Machine Learning Zoomcamp](https://github.com/DataTalksClub/machine-learning-zoomcamp) Engineering course** by [DataTalks.Club](https://datatalks.club/).
+My notes, homework, and projects while learning from the [Machine Learning Zoomcamp](https://github.com/DataTalksClub/machine-learning-zoomcamp) Engineering course by [DataTalks.Club](https://datatalks.club/).
 
 Covers end-to-end ML workflow:
 - Regression & Classification
@@ -12,7 +12,8 @@ Covers end-to-end ML workflow:
 
 ## Structure
 
-Each module has its own folder containing the lessons, notebooks, and notes.
+- Each module has its own folder containing the lessons, notebooks, homework and notes. 
+- Projects will be stored in the `projects/` folder.
 
 ```
 ml-zoomcamp/
@@ -49,8 +50,3 @@ I plan to complete two projects as part of this course:
 
 - [ ] **Midterm Project** (after Module 6)
 - [ ] **Capstone Project** (after Module 10)
-
-## Notes
-
-- Each module folder contains notebooks, homework, and personal notes.
-- Projects will be stored in the `projects/` folder.
