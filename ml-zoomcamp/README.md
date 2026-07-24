@@ -1,6 +1,6 @@
 # Machine Learning Zoomcamp
 
-My notes, homework, and projects from the **Self-paced [Machine Learning Zoomcamp](https://github.com/DataTalksClub/machine-learning-zoomcamp)Engineering course** by [DataTalks.Club] (https://datatalks.club/).
+My notes, homework, and projects from the **Self-paced [Machine Learning Zoomcamp](https://github.com/DataTalksClub/machine-learning-zoomcamp) Engineering course** by [DataTalks.Club](https://datatalks.club/).
 
 Covers end-to-end ML workflow:
 - Regression & Classification
