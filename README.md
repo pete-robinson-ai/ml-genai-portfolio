@@ -7,8 +7,8 @@ My learning journey and projects toward becoming a **Junior Machine Learning / G
 - **[ML Zoomcamp](./ml-zoomcamp)** — Machine Learning Engineering course by DataTalks.Club (notes, homework &  2 ML projects)
 - **[SQLBolt](./sqlbolt)** — SQL practice and exercises
 - **[NeetCode 150](./neetcode150)** — Coding interview practice (Python)
-- **[C++](./c++)** — Modern C++ & 4 projects (Blackjack, Linear Regression, Tiny NN (XOR), Tic-Tac-Toe + Minimax)
-- **[GenAI Projects](./genai-projects)** — 3 GenAI portfolio projects (Chatbot UI, RAG Tool, Fine-tuned LLM projects)
+- **[C++](./c++)** — Modern C++ and 4 projects (Blackjack, Linear Regression, Tiny NN (XOR), Tic-Tac-Toe + Minimax)
+- **[GenAI Projects](./genai-projects)** — 3 GenAI projects (Chatbot UI, RAG Tool, Fine-tuned LLM projects)
 
 ## Current Focus
 
