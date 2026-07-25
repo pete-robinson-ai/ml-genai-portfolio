@@ -15,7 +15,8 @@ Each chapter is in its own file under the matching folder:
 c++/
 ├── 01-core/
 ├── 02-intermediate/
-└── 03-advanced/
+├── 03-advanced/
+└── projects/
 ```
 
 ## Progress Tracker
@@ -58,3 +59,13 @@ c++/
 - [ ] 26 - Templates and Classes
 - [ ] 27 - Exceptions
 - [ ] 28 - Input and Output (I/O)
+
+
+## Projects
+
+I will build 4 projects to practice and showcase what I learn:
+
+- [ ] 1. Blackjack
+- [ ] 2. Linear Regression
+- [ ] 3. Tiny Neural Network (XOR)
+- [ ] 4. Tic-Tac-Toe + Minimax
