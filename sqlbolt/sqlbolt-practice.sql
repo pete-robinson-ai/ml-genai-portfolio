@@ -294,3 +294,80 @@ INNER JOIN boxoffice ON movies.id = boxoffice.movie_id;
 SELECT title, year
 FROM movies
 WHERE year % 2 = 0;
+
+
+
+
+
+-- =============================================
+-- Lesson 10: Queries with aggregates (Pt. 1)
+-- =============================================
+
+-- Note: Aggregate functions summarize many rows into one value.
+-- Common functions: COUNT(), SUM(), AVG(), MIN(), MAX()
+--
+-- Syntax (all rows):
+-- SELECT AVG(column) AS avg_value
+-- FROM table;
+--
+-- Syntax (per group):
+-- SELECT column, AVG(other_column) AS avg_value
+-- FROM table
+-- GROUP BY column;
+
+-- COUNT(*) → counts all rows (including rows with NULL values)
+-- COUNT(column) → counts only rows where that column is NOT NULL\
+-- =============================================
+-- Exercise 10
+-- 1. Find the longest time that an employee has been at the studio
+SELECT name, MAX(years_employed) AS max_years 
+FROM employees;
+
+-- 2. For each role, find the average number of years employed by employees in that role
+SELECT role, AVG(years_employed) AS avg_years
+FROM employees
+GROUP BY role;
+
+-- 3. Find the total number of employee years worked in each building
+SELECT building, SUM(years_employed) AS total_years
+FROM employees
+GROUP BY building;
+
+
+
+
+
+-- =============================================
+-- Lesson 11: Queries with aggregates (Pt. 2)
+-- =============================================
+
+-- Note: WHERE filters individual rows first.
+-- GROUP BY creates groups.
+-- HAVING then filters those groups.
+
+-- Syntax:
+-- SELECT column, AGG_FUNC(other_column)
+-- FROM table
+-- WHERE row_condition
+-- GROUP BY column
+-- HAVING group_condition;
+-- =============================================
+-- Exercise 11
+-- 1. Find the number of Artists in the studio (without a HAVING clause)
+SELECT Count(name) AS num_artists 
+FROM employees 
+where role = "Artist";
+
+-- 2. Find the number of Employees of each role in the studio
+SELECT role, COUNT(*) AS num_employees
+FROM employees
+GROUP BY role;
+
+-- 3. Find the total number of years employed by all Engineers
+SELECT SUM(years_employed) AS total_years
+FROM employees
+WHERE role = "Engineer";
+
+
+
+
