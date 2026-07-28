@@ -217,6 +217,12 @@ ORDER BY rating DESC;
 -- WHERE condition(s)
 -- ORDER BY column, … ASC/DESC
 -- LIMIT num_limit OFFSET num_offset;
+
+-- LEFT JOIN NOTES: 
+-- SELECT *
+-- FROM left_table
+-- LEFT JOIN right_table
+-- ON left_table.column = right_table.column;
 -- =============================================
 -- Exercise 7
 -- 1. Find the list of all buildings that have employees
@@ -232,4 +238,59 @@ LEFT JOIN employees ON buildings.building_name = employees.building;
 
 
 
+-- =============================================
+-- Lesson 8: A short note on NULLs
+-- =============================================
 
+-- Note: NULL = missing/unknown value (not the same as 0 or empty string).
+-- Use IS NULL / IS NOT NULL to check for them (never use = NULL).
+-- Common after LEFT JOIN when there is no match.
+-- "WHERE column IS/IS NOT NULL"
+-- "AND/OR another_condition"
+-- =============================================
+-- Exercise 8
+SELECT name, role 
+FROM employees 
+WHERE building IS NULL;
+
+-- 2. Find the names of the buildings that hold no employees
+SELECT building_name 
+FROM buildings 
+LEFT JOIN employees ON buildings.building_name = employees.building
+WHERE employees.building IS NULL;
+
+
+
+
+-- =============================================
+-- Lesson 9: Queries with expressions
+-- =============================================
+
+-- Note: Expression = calculation that creates a new value.
+-- Syntax example:
+-- SELECT column1 + column2 AS new_name
+-- FROM table;
+--
+-- Use math operators (+ - * / %), string functions, etc.
+-- AS gives the result a clean name (alias).
+-- Useful for creating new features (like in pandas).
+--
+-- Note: "%" means Modulo - returns the remainder after division.
+-- 10 % 2 = 0 (10 ÷ 2 = 5 remainder 0)
+-- 11 % 2 = 1 (11 ÷ 2 = 5 remainder 1)
+-- =============================================
+-- Exercise 9
+-- 1. List all movies and their combined sales in millions of dollars
+SELECT title, (domestic_sales + international_sales) / 1000000 AS combined_sales_millions
+FROM movies
+INNER JOIN boxoffice ON movies.id = boxoffice.movie_id;
+
+-- 2. List all movies and their ratings in percent
+SELECT title, rating * 10 AS rating_percent
+FROM movies
+INNER JOIN boxoffice ON movies.id = boxoffice.movie_id;
+
+-- 3. List all movies that were released on even number years
+SELECT title, year
+FROM movies
+WHERE year % 2 = 0;
