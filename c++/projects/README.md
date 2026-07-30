@@ -4,15 +4,14 @@ Four portfolio projects to practice core C++ and foundational AI/ML concepts whi
 
 ## Projects Overview
 
-| # | Project                       | Time Estimate | Status |
-|---|-------------------------------|---------------|--------|
-| 1 | Blackjack (console)           | 1–2 weeks     |  [x]   |
-| 2 | Linear Regression from Scratch| 1–2 weeks     |  [ ]   |
-| 3 | Tiny Neural Network (XOR)     | 2–4 weeks     |  [ ]   |
-| 4 | Tic-Tac-Toe + Minimax         | 1.5–3 weeks   |  [ ]   |
+**Project Order:** Blackjack → Linear Regression → Tiny NN → Tic-Tac-Toe
 
-## Project Order
-**Blackjack → Linear Regression → Tiny NN → Tic-Tac-Toe**
+### Progress
+
+- [ ] 1. Blackjack (console) — 1-2 weeks
+- [ ] 2. Linear Regression from Scratch — 1-2 weeks
+- [ ] 3. Tiny Neural Network (XOR) — 2-4 weeks
+- [ ] 4. Tic-Tac-Toe + Minimax — 1.5-3 weeks
 
 ## Project Descriptions
 
