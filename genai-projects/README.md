@@ -15,10 +15,6 @@ Hands-on projects focused on building real-world Generative AI applications.
 **Tech Stack:**  
 Python · Gradio · OpenAI API
 
-**Target Metric:** ≥ 90% coherent and relevant responses
-
----
-
 #### Progress Tracker
 
 - [ ] 1. Project setup (folder + virtual env + requirements.txt)
@@ -29,9 +25,15 @@ Python · Gradio · OpenAI API
 - [ ] 6. Test responses and measure coherence
 - [ ] 7. Final cleanup + add screenshots to README
 
+**Target Metric:** ≥ 90% coherent and relevant responses
+
+---
+
 ### Project 2: RAG Document Q&A Tool
 *(Coming after the chatbot)*  
 Retrieval-Augmented Generation using LangChain + FAISS / Chroma vector embeddings
+
+---
 
 ### Project 3: Domain-Specific Fine-tuned Model
 *(Coming later)*  
