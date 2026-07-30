@@ -15,6 +15,8 @@ Hands-on projects focused on building real-world Generative AI applications.
 **Tech Stack:**  
 Python · Gradio · OpenAI API
 
+---
+
 #### Progress Tracker
 
 - [ ] 1. Project setup (folder + virtual env + requirements.txt)
