@@ -204,9 +204,24 @@ ORDER BY rating DESC;
 -- Lesson 7: OUTER JOINs
 -- =============================================
 
+-- Join Type     | Keeps from Left | Keeps from Right | Non-matches become NULL
+-- --------------|-----------------|------------------|-------------------------
+-- INNER JOIN ON | ONLY matches    | ONLY matches     | No
+-- LEFT JOIN  ON | All             | Matches only     | Yes (right side)
+-- RIGHT JOIN ON | Matches only    | All              | Yes (left side)
+-- FULL JOIN  ON | All             | All              | Yes (both sides)
+
+
+
+
 -- Note: LEFT JOIN keeps all rows from left table (like left merge in pandas). 
--- Useful when data is incomplete (common in real ML datasets).
--- Parameters: LEFT JOIN (logical join), RIGHT JOIN (reversed), FULL JOIN (exact format)
+-- Useful when data is incomplete (common in real ML datasets)
+-- Use INNER JOIN when only matching rows are wanted
+-- Use LEFT JOIN when all rows from the left table must be kept, even if no match exists
+-- NULL holds all datatypes/unknown marker
+
+
+
 -- NULLS constraints
 -- Exercise focuses on DISTINCT with JOINs
 
@@ -218,11 +233,16 @@ ORDER BY rating DESC;
 -- ORDER BY column, … ASC/DESC
 -- LIMIT num_limit OFFSET num_offset;
 
--- LEFT JOIN NOTES: 
--- SELECT *
--- FROM left_table
--- LEFT JOIN right_table
--- ON left_table.column = right_table.column;
+
+
+-- INNER JOIN SYNTAX:
+-- FROM table_a
+-- INNER JOIN table_b ON table_a.id = table_b.id
+
+
+-- LEFT/RIGHT/FULL SYNTAX: 
+-- FROM table_a
+-- LEFT/RIGHT/FULL JOIN table_b ON table_a.id = table_b.id;
 -- =============================================
 -- Exercise 7
 -- 1. Find the list of all buildings that have employees
@@ -316,7 +336,10 @@ WHERE year % 2 = 0;
 -- GROUP BY column;
 
 -- COUNT(*) → counts all rows (including rows with NULL values)
--- COUNT(column) → counts only rows where that column is NOT NULL\
+-- COUNT(column) → counts only rows where that column is NOT NULL
+
+-- DISTINCT = “give me unique values / unique combinations”
+-- GROUP BY = “group the data so I can calculate something per group”
 -- =============================================
 -- Exercise 10
 -- 1. Find the longest time that an employee has been at the studio
@@ -368,6 +391,116 @@ SELECT SUM(years_employed) AS total_years
 FROM employees
 WHERE role = "Engineer";
 
+
+
+
+-- =============================================
+-- Lesson 12: Order of execution of a Query
+-- =============================================
+
+-- Note: SQL clauses run in a fixed order (not the order they are written).
+-- Understanding this order helps write correct queries and debug errors.
+--
+-- Order of execution:
+-- 1. FROM + JOIN
+-- 2. WHERE
+-- 3. GROUP BY
+-- 4. HAVING
+-- 5. SELECT
+-- 6. DISTINCT
+-- 7. ORDER BY
+-- 8. LIMIT / OFFSET
+--
+-- Full SELECT syntax:
+-- SELECT DISTINCT column, AGG_FUNC(...)
+-- FROM table
+-- JOIN other_table ON ...
+-- WHERE condition
+-- GROUP BY column
+-- HAVING group_condition
+-- ORDER BY column ASC/DESC
+-- LIMIT count OFFSET count;
+-- =============================================
+-- Exercise 12
+-- 1. Find the number of movies each director has directed
+SELECT director, COUNT(*) AS num_movies
+FROM movies
+GROUP BY director;
+
+-- 2. Find the total domestic and international sales that can be attributed to each director
+SELECT director, 
+SUM(domestic_sales + international_sales) AS total_sales
+FROM movies
+INNER JOIN boxoffice ON movies.id = boxoffice.movie_id
+GROUP BY director;
+
+
+
+
+-- =============================================
+-- Lesson 13: Inserting rows
+-- =============================================
+
+-- Note: INSERT adds new rows into a table.
+-- First column id is an auto-incrementing primary key → database fills it automatically
+-- Columns are identified by name, not by number (no column 0 or column 1)
+
+
+
+-- Syntax (all columns):
+-- INSERT INTO table_name
+-- VALUES (NULL, value2, ...);
+-- WORKS In PostgreSQL, MySQL, SQLite, SQLBOLT
+
+-- Use this version (preferred):
+-- Syntax (specific columns):
+-- INSERT INTO table_name (col1, col2, ...)
+-- VALUES (value1, value2, ...);
+--
+-- Multiple rows can be inserted in one statement by listing extra (value...) groups.
+-- =============================================
+-- Exercise 13
+-- 1. Add the studio's new production, Toy Story 4 to the list of movies
+INSERT INTO movies (title, director, year, length_minutes)
+VALUES ("Toy Story 4", "Josh Cooley", 2019, 100);
+
+-- 2. Toy Story 4 has a rating of 8.7, and made 340 million domestically and 270 million internationally
+INSERT INTO boxoffice (movie_id, rating, domestic_sales, international_sales)
+VALUES (15, 8.7, 340000000, 270000000);
+
+
+
+
+-- =============================================
+-- Lesson 14: Updating rows
+-- =============================================
+
+-- Note: UPDATE changes existing data in a table.
+-- Always include a WHERE clause (otherwise every row is changed).
+--
+-- Syntax:
+-- UPDATE table_name
+-- SET column1 = value1,
+--     column2 = value2
+-- WHERE condition;
+-- =============================================
+-- Exercise 14
+-- 1. The director for A Bug's Life is incorrect, it was actually directed by John Lasseter
+UPDATE movies
+SET director = "John Lasseter"
+WHERE title = "A Bug's Life";
+
+-- 2. The year that Toy Story 2 was released is incorrect, it was actually released in 1999
+UPDATE movies
+SET year = 1999
+WHERE title = "Toy Story 2";
+
+-- 3. Both the title and director for Toy Story 8 is incorrect!
+--    Title should be "Toy Story 3" and directed by Lee Unkrich
+UPDATE movies
+SET title = "Toy Story 3",
+    director = "Lee Unkrich"
+WHERE title = "Toy Story 8";
 
 
 
