@@ -504,3 +504,130 @@ WHERE title = "Toy Story 8";
 
 
 
+
+-- =============================================
+-- Lesson 15: Deleting rows
+-- =============================================
+
+-- Note: DELETE removes rows from a table.
+-- Always include a WHERE clause (otherwise every row is deleted).
+--
+-- Syntax:
+-- DELETE FROM table_name
+-- WHERE condition;
+-- =============================================
+-- Exercise 15
+-- 1. Remove all movies that were released before 2005
+DELETE FROM movies
+WHERE year < 2005;
+
+-- 2. Remove all movies directed by Andrew Stanton
+DELETE FROM movies
+WHERE director = "Andrew Stanton";
+
+
+
+
+
+-- =============================================
+-- Lesson 16: Creating tables
+-- =============================================
+
+-- Note: CREATE TABLE defines a new table and its columns (schema).
+--
+-- Syntax:
+-- CREATE TABLE IF NOT EXISTS table_name (
+--     column1 datatype constraint DEFAULT default_value,
+--     column2 datatype constraint,
+--     ...
+-- );
+--
+-- Common data types: INTEGER, TEXT, REAL, BOOLEAN, DATE
+-- Common constraints: PRIMARY KEY, AUTOINCREMENT, UNIQUE, NOT NULL
+
+
+
+-- Data types
+-- SQL Type          | Modern meaning                          | Common in ML?
+-- ------------------|-----------------------------------------|---------------
+-- INTEGER           | Whole numbers                           | Yes
+-- REAL / FLOAT      | Decimal numbers                         | Yes
+-- TEXT / VARCHAR    | Strings / text                          | Yes
+-- BOOLEAN           | True / False (often 0/1)                | Yes
+-- DATE / DATETIME   | Dates and timestamps                    | Yes
+-- BLOB              | Binary data (images, files, raw bytes)  | Rare
+
+-- Constraints
+-- Constraint        | Meaning                                      | Why it matters
+-- ------------------|----------------------------------------------|----------------
+-- PRIMARY KEY       | Unique ID for each row                       | Core concept
+-- AUTOINCREMENT     | Automatically increases the ID               | Very common
+-- UNIQUE            | No duplicate values allowed in that column   | Useful
+-- NOT NULL          | Column cannot be empty                       | Useful
+-- FOREIGN KEY       | Value must exist in another table            | Relational integrity
+-- CHECK             | Custom rule (e.g. age > 0)                   | Occasional
+
+
+
+-- =============================================
+-- Exercise 16
+-- 1. Create a new table named Database with columns:
+--    Name (text), Version (floating point), Download_count (integer)
+--    No constraints
+CREATE TABLE Database (
+    Name TEXT,
+    Version REAL,
+    Download_count INTEGER
+);
+
+
+
+
+
+-- =============================================
+-- Lesson 17: Altering tables
+-- =============================================
+
+-- Note: ALTER TABLE changes an existing table structure (add/remove/rename columns).
+--
+-- Syntax (add column):
+-- ALTER TABLE table_name
+-- ADD column_name datatype DEFAULT default_value;
+--
+-- Syntax (rename table):
+-- ALTER TABLE old_name
+-- RENAME TO new_name;
+--
+-- Note: Dropping columns is not supported in SQLBolt’s browser SQLite.
+-- =============================================
+-- Exercise 17
+-- 1. Add a column named Aspect_ratio with a FLOAT data type
+ALTER TABLE movies
+ADD Aspect_ratio FLOAT;
+
+-- 2. Add a column named Language with a TEXT data type, default = English
+ALTER TABLE movies
+ADD Language TEXT DEFAULT "English";
+
+
+
+
+
+-- =============================================
+-- Lesson 18: Dropping tables
+-- =============================================
+
+-- Note: DROP TABLE permanently removes a table and all its data + schema.
+-- Different from DELETE FROM (which only removes rows).
+--
+-- Syntax:
+-- DROP TABLE IF EXISTS table_name;
+--
+-- IF EXISTS prevents an error if the table does not exist.
+-- =============================================
+-- Exercise 18
+-- 1. Remove the Movies table
+DROP TABLE IF EXISTS movies;
+
+-- 2. Remove the BoxOffice table
+DROP TABLE IF EXISTS boxoffice;
