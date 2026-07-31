@@ -2,7 +2,7 @@
 
 My solutions and notes while learning SQL through [SQLBolt](https://sqlbolt.com).
 
-**Progress:** Core completed ✅ | Intermediate in progress
+**Progress:** Core completed ✅ | Intermediate completed ✅
 
 ## Structure
 
