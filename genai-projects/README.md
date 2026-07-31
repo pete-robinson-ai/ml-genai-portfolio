@@ -2,6 +2,16 @@
 
 Hands-on projects focused on building real-world Generative AI applications.
 
+
+### Structure
+
+```
+genai-projects/
+├── 01-chatbot/       ← Project 1: LLM-Powered Chatbot
+├── 02-rag-qa/        ← Project 2: RAG Document Q&A Tool
+└── 03-fine-tune/     ← Project 3: Domain-Specific Fine-tuned Model
+```
+
 ### 1. LLM-Powered Chatbot (In Progress)
 
 **Goal:** Build an interactive web-based chatbot that answers questions using a large language model.

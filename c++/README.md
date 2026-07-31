@@ -16,7 +16,8 @@ c++/
 ├── 01-core/
 ├── 02-intermediate/
 ├── 03-advanced/
-└── projects/
+├── projects/
+└── README.md
 ```
 
 ## Progress Tracker

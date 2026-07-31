@@ -26,9 +26,9 @@ ml-zoomcamp/
 ├── 08-deep-learning/
 ├── 09-serverless/
 ├── 10-kubernetes/
-└── projects/
+├── projects/
+└── README.md
 ```
-
 
 ## Progress Tracker
 

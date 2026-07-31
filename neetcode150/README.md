@@ -28,9 +28,9 @@ neetcode150/
 ├── 15-Greedy/
 ├── 16-Intervals/
 ├── 17-Math-and-Geometry/
-└── 18-Bit-Manipulation/
+├── 18-Bit-Manipulation/
+└── README.md
 ```
-
 
 ## Progress Tracker
 
